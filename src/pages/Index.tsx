@@ -21,6 +21,12 @@ import MetricCard from '@/components/MetricCard';
 import ProductTable from '@/components/ProductTable';
 import VideoSection from '@/components/VideoSection';
 import MarketingSection from '@/components/MarketingSection';
+import ClientsSection from '@/components/ClientsSection';
+import TopProductsSection from '@/components/TopProductsSection';
+import PlannerSection from '@/components/PlannerSection';
+import FeedbackSection from '@/components/FeedbackSection';
+import AITableauSection from '@/components/AITableauSection';
+import SettingsSection from '@/components/SettingsSection';
 
 const Index = () => {
   const [currentView, setCurrentView] = useState('dashboard');
@@ -58,6 +64,48 @@ const Index = () => {
             <ProductTable />
           </div>
         );
+      case 'clients':
+        return (
+          <div className="space-y-6">
+            <h1 className="text-3xl font-bold text-gray-900">Clients</h1>
+            <ClientsSection />
+          </div>
+        );
+      case 'top-products':
+        return (
+          <div className="space-y-6">
+            <h1 className="text-3xl font-bold text-gray-900">Top Produits</h1>
+            <TopProductsSection />
+          </div>
+        );
+      case 'planning':
+        return (
+          <div className="space-y-6">
+            <h1 className="text-3xl font-bold text-gray-900">Planificateur</h1>
+            <PlannerSection />
+          </div>
+        );
+      case 'feedback':
+        return (
+          <div className="space-y-6">
+            <h1 className="text-3xl font-bold text-gray-900">Feedback Clients</h1>
+            <FeedbackSection />
+          </div>
+        );
+      case 'ai':
+        return (
+          <div className="space-y-6">
+            <h1 className="text-3xl font-bold text-gray-900">Tableau IA</h1>
+            <AITableauSection />
+          </div>
+        );
+      case 'settings':
+        return (
+          <div className="space-y-6">
+            <h1 className="text-3xl font-bold text-gray-900">Paramètres</h1>
+            <SettingsSection />
+          </div>
+        );
       case 'video':
         return (
           <div className="space-y-6">
@@ -77,7 +125,7 @@ const Index = () => {
           <div className="space-y-6">
             <div className="flex items-center justify-between">
               <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" onClick={() => setCurrentView('settings')}>
                 <Settings className="w-4 h-4 mr-2" />
                 Paramètres
               </Button>

@@ -107,7 +107,15 @@ const Sidebar = ({ currentView, onViewChange }: SidebarProps) => {
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 p-6">
-        <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-700 transition-colors">
+        <button 
+          onClick={() => onViewChange('settings')}
+          className={cn(
+            "w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors",
+            currentView === 'settings'
+              ? "bg-blue-600 text-white"
+              : "text-slate-300 hover:text-white hover:bg-slate-700"
+          )}
+        >
           <Settings className="w-5 h-5" />
           Paramètres
         </button>
