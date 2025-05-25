@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -27,6 +26,8 @@ import PlannerSection from '@/components/PlannerSection';
 import FeedbackSection from '@/components/FeedbackSection';
 import AITableauSection from '@/components/AITableauSection';
 import SettingsSection from '@/components/SettingsSection';
+import OrdersSection from '@/components/OrdersSection';
+import RiskCenterSection from '@/components/RiskCenterSection';
 
 const Index = () => {
   const [currentView, setCurrentView] = useState('dashboard');
@@ -64,6 +65,13 @@ const Index = () => {
             <ProductTable />
           </div>
         );
+      case 'orders':
+        return (
+          <div className="space-y-6">
+            <h1 className="text-3xl font-bold text-gray-900">Commandes</h1>
+            <OrdersSection />
+          </div>
+        );
       case 'clients':
         return (
           <div className="space-y-6">
@@ -90,6 +98,13 @@ const Index = () => {
           <div className="space-y-6">
             <h1 className="text-3xl font-bold text-gray-900">Feedback Clients</h1>
             <FeedbackSection />
+          </div>
+        );
+      case 'risks':
+        return (
+          <div className="space-y-6">
+            <h1 className="text-3xl font-bold text-gray-900">Centre de Risques</h1>
+            <RiskCenterSection />
           </div>
         );
       case 'ai':
